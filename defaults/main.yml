@@ -5,14 +5,16 @@
 # Use commitity binaries from bacula systems?
 
 bacula_community_binaries: no
-bacula_community_version: "9.4.2"
+bacula_community_version: "9.6.7"
 bacula_community_key: "XXXXXXXXXX"
 
 # don't override, this is what bacula systems provide:
 bacula_community_deb_releases:
+ - bionic
+ - buster
+ - focal
  - jessie
  - stretch
  - xenial
- - bionic
 
 ##################################################

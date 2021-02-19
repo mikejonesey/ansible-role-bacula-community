@@ -1,15 +1,15 @@
 ---
 # tasks file for bacula-upgrade
 
+- name: Get host facts
+  ansible.builtin.setup:
+    gather_subset:
+      - 'all'
+
 - name: Setup community binaries for Debian
   include_tasks: community_binaries_debian.yml
-  when: "bacula_community_binaries|bool == True and ansible_os_family == 'Debian' and ansible_architecture == 'x86_64' and ansible_distribution_release in bacula_community_deb_releases"
+  when: "ansible_os_family == 'Debian' and ansible_architecture == 'x86_64' and ansible_distribution_release in bacula_community_deb_releases"
 
 - name: Setup community binaries for CentOS
   include_tasks: community_binaries_centos.yml
-  when: "bacula_community_binaries|bool == True and ansible_distribution == 'CentOS' and ansible_architecture == 'x86_64'"
-
-- name: Install Bacula FD (Client)
-  package:
-#    name: "{{ install_packages }}"
-    state: latest
+  when: "ansible_distribution == 'CentOS' and ansible_architecture == 'x86_64'"

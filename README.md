@@ -1,7 +1,7 @@
 Role Name
 =========
 
-This role is used to setup the bacula community repositories.
+This role is used to setup the bacula community repositories. The community repos provided by bacula make it easier to standardise the release version across different distributions. Without the community repo, debian has pretty up-to-date versions however centos does not.
 
 Requirements
 ------------
