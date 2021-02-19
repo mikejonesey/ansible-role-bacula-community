@@ -1,2 +1,18 @@
 ---
 # defaults file for bacula-upgrade
+
+##################################################
+# Use commitity binaries from bacula systems?
+
+bacula_community_binaries: no
+bacula_community_version: "9.4.2"
+bacula_community_key: "XXXXXXXXXX"
+
+# don't override, this is what bacula systems provide:
+bacula_community_deb_releases:
+ - jessie
+ - stretch
+ - xenial
+ - bionic
+
+##################################################
