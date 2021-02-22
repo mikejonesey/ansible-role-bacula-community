@@ -1,4 +1,8 @@
 
+- name: Update apt cache
+  apt:
+    update_cache : yes
+
 - name: Install apt-transport-https
   apt:
     name: apt-transport-https
@@ -17,8 +21,6 @@
     group: root
     mode: 644
 
-- name: Choose packages
-  set_fact:
-    install_packages:
-      - bacula-client
-      - bacula-libs
+- name: Update apt cache
+  apt:
+    update_cache : yes

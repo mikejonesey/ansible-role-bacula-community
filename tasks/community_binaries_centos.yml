@@ -21,12 +21,6 @@
   command: mv /etc/bacula /etc/bacula.old
   when: "bacula_config_dir.stat.islnk is defined and bacula_config_dir.stat.islnk == False"
 
-- name: Choose packages
-  set_fact:
-    install_packages:
-      - bacula-client
-      - bacula-libs
-
 - name: Create STD DIRs
   file:
     path: "{{ item }}"
